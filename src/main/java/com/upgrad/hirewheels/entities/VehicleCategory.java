@@ -19,10 +19,9 @@ public class VehicleCategory {
 
     public VehicleCategory(){}
 
-    public VehicleCategory(int vehicleCategoryId, String vehicleCategoryName, Set<VehicleSubcategory> vehicleSubcategories) {
+    public VehicleCategory(int vehicleCategoryId, String vehicleCategoryName) {
         this.vehicleCategoryId = vehicleCategoryId;
         this.vehicleCategoryName = vehicleCategoryName;
-        this.vehicleSubcategories = vehicleSubcategories;
     }
 
     public int getVehicleCategoryId() {

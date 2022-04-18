@@ -33,14 +33,12 @@ public class Location {
 
     public Location(){}
 
-    public Location(int locationId, String locationName, String address, City city, String pincode, Set<Booking> bookingsList, Set<Vehicle> vehicles) {
+    public Location(int locationId, String locationName, String address, String pincode, City city) {
         this.locationId = locationId;
         this.locationName = locationName;
         this.address = address;
-        this.city = city;
         this.pincode = pincode;
-        this.bookingsList = bookingsList;
-        this.vehicles = vehicles;
+        this.city = city;
     }
 
     public int getLocationId() {

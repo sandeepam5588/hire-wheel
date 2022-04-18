@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue
@@ -18,7 +18,7 @@ public class User {
     @Column(name = "last_name",length = 50, nullable = false)
     private String lastName;
 
-    @Column(name = "password", nullable = false, columnDefinition = "VARCHAR(50) CHECK (length > 5)")
+    @Column(name = "password",length = 50, nullable = false)
     private String password;
 
     @Column(name = "email",length = 50, nullable = false, unique = true)
@@ -39,16 +39,14 @@ public class User {
 
     public User(){}
 
-    public User(int userId, String firstName, String lastName, String password, String email, String mobileNo, Role role, double walletMoney, Set<Booking> bookings) {
-        this.userId = userId;
+    public User(String firstName, String lastName, String password, String email, String mobileNo, float walletMoney, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.mobileNo = mobileNo;
-        this.role = role;
         this.walletMoney = walletMoney;
-        this.bookings = bookings;
+        this.role = role;
     }
 
     public int getUserId() {

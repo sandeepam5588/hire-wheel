@@ -20,10 +20,9 @@ public class Role {
 
     public Role(){}
 
-    public Role(int roleId, String roleName, Set<User> usersList) {
+    public Role(int roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;
-        this.usersList = usersList;
     }
 
     public int getRoleId() {

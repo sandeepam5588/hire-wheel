@@ -19,10 +19,9 @@ public class City {
 
     public City(){}
 
-    public City(int cityId, String cityName, Set<Location> locations) {
+    public City(int cityId, String cityName) {
         this.cityId = cityId;
         this.cityName = cityName;
-        this.locations = locations;
     }
 
     public int getCityId() {
