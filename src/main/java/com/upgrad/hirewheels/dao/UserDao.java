@@ -10,4 +10,6 @@ public interface UserDao extends JpaRepository<User, Integer> {
     List<User> findByFirstNameOrLastNameIgnoreCase(String firstName, String lastName);
     User findByEmailIgnoreCase(String email);
     User findByMobileNoIgnoreCase(String mobileNo);
+
+    User findByEmailAndPassword(String email, String password);
 }
