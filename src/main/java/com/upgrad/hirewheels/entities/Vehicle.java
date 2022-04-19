@@ -50,8 +50,18 @@ public class Vehicle {
     private Set<Booking> bookings;
 
     public Vehicle(){}
+    public Vehicle(String vehicleModel, String vehicleNumber, String color, boolean availabilityStatus, String vehicleImageUrl, VehicleSubcategory vehicleSubcategory, Location location, FuelType fuelType) {
+        this.vehicleModel = vehicleModel;
+        this.vehicleNumber = vehicleNumber;
+        this.color = color;
+        this.availabilityStatus = availabilityStatus;
+        this.vehicleImageUrl = vehicleImageUrl;
+        this.vehicleSubcategory = vehicleSubcategory;
+        this.location = location;
+        this.fuelType = fuelType;
+    }
 
-    public Vehicle(int vehicleId, String vehicleModel, String vehicleNumber, String color, boolean availabilityStatus, String vehicleImageUrl, VehicleSubcategory vehicleSubcategory, Location location, FuelType fuelType, Set<Booking> bookings) {
+    public Vehicle(int vehicleId, String vehicleModel, String vehicleNumber, String color, boolean availabilityStatus, String vehicleImageUrl, VehicleSubcategory vehicleSubcategory, Location location, FuelType fuelType) {
         this.vehicleId = vehicleId;
         this.vehicleModel = vehicleModel;
         this.vehicleNumber = vehicleNumber;
@@ -61,7 +71,6 @@ public class Vehicle {
         this.vehicleSubcategory = vehicleSubcategory;
         this.location = location;
         this.fuelType = fuelType;
-        this.bookings = bookings;
     }
 
     public int getVehicleId() {
