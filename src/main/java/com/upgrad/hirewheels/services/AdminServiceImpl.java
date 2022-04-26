@@ -7,9 +7,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AdminServiceImpl implements AdminService{
-    @Autowired
-    private VehicleDao vehicleDao;
 
+    @Autowired
+    VehicleDao vehicleDao;
+
+    /**
+     * This method interacts with the VehicleDao to store vehicle's data into the database.
+     * @param vehicle
+     * @return
+     */
     @Override
     public Vehicle registerVehicle(Vehicle vehicle) {
         Vehicle checkVehicle = vehicleDao.findByVehicleNumber(vehicle.getVehicleNumber());
@@ -21,6 +27,14 @@ public class AdminServiceImpl implements AdminService{
         return vehicleDao.save(vehicle);
     }
 
+    /**
+     * This method changes the availability_status field of the vehicle based on the input parameters.
+     * If the availability_status =0, then the vehicle is not available for booking. Similarly,
+     * if the availability_status =1, then the vehicle is available for booking.
+     * @param vehicleId
+     * @param availabilityStatus
+     * @return
+     */
     @Override
     public Vehicle changeAvailabilityStatus(int vehicleId, boolean availabilityStatus) {
         Vehicle retrievedVehicle = vehicleDao.findById(vehicleId).get();
